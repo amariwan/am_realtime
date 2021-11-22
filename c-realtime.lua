@@ -1,0 +1,6 @@
+SetMillisecondsPerGameMinute(60000)
+RegisterNetEvent("am_realtime:event")
+AddEventHandler("am_realtime:event", function(h, m, s)
+	NetworkOverrideClockTime(h, m, s)
+end)
+TriggerServerEvent("am_realtime:event")
