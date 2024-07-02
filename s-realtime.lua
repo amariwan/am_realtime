@@ -1,4 +1,6 @@
-RegisterServerEvent("am_realtime:event")
-AddEventHandler("am_realtime:event", function()
-	TriggerClientEvent("am_realtime:event", source, tonumber(os.date("%H")), tonumber(os.date("%M")), tonumber(os.date("%S")))
+RegisterServerEvent("am_realtime:requestTime")
+AddEventHandler("am_realtime:requestTime", function()
+    local source = source
+    local time = os.date("*t")
+    TriggerClientEvent("am_realtime:event", source, time.hour, time.min, time.sec)
 end)
